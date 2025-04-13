@@ -2,7 +2,7 @@ export const environment = {
     production: false,
     backend: {
       // baseURL: "https://api.deabt.us/",
-      baseURL: "http://127.0.0.1:8000/",
+      baseURL: "http://localhost:5000/api/",
       api: "api/",
     },
   };
