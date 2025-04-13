@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions } from 'chart.js';
+import { GlobalService } from '../../../shared/services/global.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,6 +8,8 @@ import { ChartOptions } from 'chart.js';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  constructor(public globalService: GlobalService){}
   // Statistic Cards Data
   stats = [
     { label: 'Total Students', value: 1200, icon: 'pi pi-users' },

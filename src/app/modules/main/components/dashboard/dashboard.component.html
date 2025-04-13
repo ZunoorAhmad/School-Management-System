@@ -2,12 +2,15 @@
 <div class="p-4">
     <!-- Welcome Card -->
     <p-card class="mb-4">
-        <div class="flex justify-between items-center">
+        <div class="flex justify-content-between items-center">
             <div>
                 <h1 class="text-xl font-bold">Welcome to School Dashboard</h1>
                 <p>Overview of school activities and performance</p>
             </div>
-            <i class="pi pi-school text-3xl"></i>
+            <div>
+                <button pButton type="button" label="Student Listing" class="p-button-success rounded"
+                (click)="globalService.goToPage('/main/students-listing')"></button>
+            </div>
         </div>
     </p-card>
 
