@@ -37,7 +37,18 @@ export class SignupComponent {
     return this.signupForm.controls;
   }
 
+  forceLowercaseEmail() {
+    const currentValue = this.signupForm.get('email')?.value;
+    if (currentValue) {
+      this.signupForm.get('email')?.setValue(currentValue.toLowerCase(), { emitEvent: false });
+    }
+  }
+
   submitForm() {
+    if (this.signupForm.value.password.length < 6) {
+      this.global.alertBox('Alert', 'Password Should be min 6 characters');
+      return;
+    };
     if (this.signupForm.value.password != this.signupForm.value.confirmPassword) {
       this.global.alertBox('Alert', 'Password and Confirm password must be same');
       return
